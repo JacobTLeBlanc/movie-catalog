@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  dynamo-admin:
+    image: instructure/dynamo-local-admin
+    restart: always
+    container_name: local-dynamo
+    ports:
+      - "8001:8001"
+      - "8002:8002"
