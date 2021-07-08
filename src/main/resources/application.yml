@@ -6,3 +6,5 @@ dynamodb:
   endpoint: http://localhost:8002
   region: us-east-1
   tableName: movie_info
+  accessKey: key
+  secretKey: secret

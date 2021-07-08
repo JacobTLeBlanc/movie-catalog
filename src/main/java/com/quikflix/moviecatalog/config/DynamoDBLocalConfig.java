@@ -17,6 +17,8 @@ import com.amazonaws.services.dynamodbv2.model.CreateTableResult;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
+import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
+import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -37,7 +39,7 @@ public class DynamoDBLocalConfig {
 	@PostConstruct
 	void createLocalDynamoDB() {
 		
-		if (dynamoDB.describeTable(tableName).getTable() == null) {
+		try {
 		
 			log.info("Creating local DynamoDB table " + tableName);
 			
@@ -59,7 +61,7 @@ public class DynamoDBLocalConfig {
 	
 			log.info("Successfully created table: " + result.getTableDescription());
 			
-		} else {
+		} catch(ResourceInUseException e) {
 			
 			log.info("local table " + tableName + " already exists");
 			
