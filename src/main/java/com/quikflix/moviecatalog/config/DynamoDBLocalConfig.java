@@ -44,7 +44,7 @@ public class DynamoDBLocalConfig {
 			log.info("Creating local DynamoDB table " + tableName);
 			
 			ArrayList<AttributeDefinition> attributeDefinitions= new ArrayList<AttributeDefinition>();
-			attributeDefinitions.add(new AttributeDefinition().withAttributeName("Id").withAttributeType("N"));
+			attributeDefinitions.add(new AttributeDefinition().withAttributeName("Id").withAttributeType("S"));
 			
 			ArrayList<KeySchemaElement> keySchema = new ArrayList<KeySchemaElement>();
 			keySchema.add(new KeySchemaElement().withAttributeName("Id").withKeyType(KeyType.HASH));
