@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
+/**
+ * Configuration for DynamoDBMapper bean
+ * 
+ */
 @Configuration
 public class DynamoDBMapperConfig {
 	

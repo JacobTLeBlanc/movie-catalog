@@ -10,6 +10,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -20,6 +22,7 @@ import lombok.Setter;
 @DynamoDBTable(tableName = "movie_info")
 @Getter
 @Setter
+@NoArgsConstructor
 public class MovieInfo {
 	
 	public MovieInfo(
